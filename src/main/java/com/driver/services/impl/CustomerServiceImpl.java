@@ -12,7 +12,6 @@ import com.driver.repository.CustomerRepository;
 import com.driver.repository.DriverRepository;
 import com.driver.repository.TripBookingRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -52,7 +51,7 @@ public class CustomerServiceImpl implements CustomerService {
 		try {
 			List<Driver> driverList = driverRepository2.findAll();
 			for(Driver driver: driverList) {
-				if(driver.getCab().isAvailable() == true) {
+				if(driver.getCab().getAvailable() == true) {
 					driver.getCab().setAvailable(false);
 					int ratePerKm = driver.getCab().getPerKmRate();
 					tripBooking.setBill(distanceInKm * ratePerKm);
