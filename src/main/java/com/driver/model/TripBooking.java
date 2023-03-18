@@ -16,8 +16,10 @@ public class TripBooking {
     private TripStatus status;
     private int bill;
     @ManyToOne
+    @JoinColumn
     Driver driver;
     @ManyToOne
+    @JoinColumn
     Customer customer;
 
     public TripBooking() {

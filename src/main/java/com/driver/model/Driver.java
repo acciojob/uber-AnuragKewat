@@ -12,6 +12,7 @@ public class Driver {
     private String mobile;
     private String password;
     @OneToOne
+    @JoinColumn
     Cab cab;
     @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)
     List<TripBooking> tripBookingList = new ArrayList<>();
